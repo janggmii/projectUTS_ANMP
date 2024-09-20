@@ -7,6 +7,11 @@ android {
     namespace = "com.ubaya.projectuts_anmp"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
+
     defaultConfig {
         applicationId = "com.ubaya.projectuts_anmp"
         minSdk = 24
