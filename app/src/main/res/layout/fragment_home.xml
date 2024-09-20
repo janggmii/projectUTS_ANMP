@@ -6,14 +6,53 @@
     tools:context="view.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/imgOur"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="141dp"
+            android:src="@drawable/schedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWwa" />
+
+        <Button
+            android:id="@+id/btnWwa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="151dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="151dp"
+            android:text="WHO WE ARE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWWA" />
+
+        <ImageView
+            android:id="@+id/imgWWA"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="138dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWwp"
+            tools:src="@drawable/people" />
 
         <TextView
             android:id="@+id/txtEsports"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="GAMING"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -25,18 +64,39 @@
             android:id="@+id/imgWWP"
             android:layout_width="130dp"
             android:layout_height="130dp"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="111dp"
+            app:layout_constraintTop_toTopOf="@+id/txtEsports"
             tools:src="@drawable/game" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnWwp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:layout_marginTop="8dp"
+            android:text="WHAT WE PLAY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWWP" />
+
+        <Button
+            android:id="@+id/btnOur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="144dp"
+            android:text="OUR SCHEDULE"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="249dp" />
+            app:layout_constraintTop_toBottomOf="@+id/imgOur" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
+
+
+
+
