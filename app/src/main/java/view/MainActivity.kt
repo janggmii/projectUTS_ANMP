@@ -1,4 +1,4 @@
-package com.ubaya.projectuts_anmp
+package view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
