@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionWhatWeFragment"
+            app:destination="@id/whatWeFragment" />
+        <action
+            android:id="@+id/actionWhoWeFragment"
+            app:destination="@id/whoWeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whatWeFragment"
+        android:name="view.WhatWeFragment"
+        android:label="fragment_what_we"
+        tools:layout="@layout/fragment_what_we" >
+        <action
+            android:id="@+id/actionWhatWeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whoWeFragment"
+        android:name="view.WhoWeFragment"
+        android:label="fragment_who_we"
+        tools:layout="@layout/fragment_who_we" />
+</navigation>

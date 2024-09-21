@@ -1,47 +1,41 @@
 package view
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.ubaya.projectuts_anmp.ui.theme.ProjectUTS_ANMPTheme
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import com.ubaya.projectuts_anmp.R
+import com.ubaya.projectuts_anmp.databinding.FragmentMainActivityBinding
 
-class MainActivity : ComponentActivity() {
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: FragmentMainActivityBinding
+    private lateinit var navController: NavController
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            ProjectUTS_ANMPTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        binding = FragmentMainActivityBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ProjectUTS_ANMPTheme {
-        Greeting("Android")
+        navController =
+            (supportFragmentManager.findFragmentById(R.id.hostFragment)
+                    as NavHostFragment).navController
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp()
+    }
+
+
+
+
+
 }
